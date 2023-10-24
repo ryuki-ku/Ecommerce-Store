@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Urbanist, Roboto } from 'next/font/google'
 import Navbar from '@/components/navbar'
 import ModalProvider from '@/providers/modal-provider'
+import ToastProvider from '@/providers/toast-provider'
 
 const fontStore = Roboto({ weight: '400', subsets: ['latin'] })
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body 
       className={fontStore.className}>
         <ModalProvider />
+        <ToastProvider />
         <Navbar />
         {children}
         <Footer />
