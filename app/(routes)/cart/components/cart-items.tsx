@@ -2,6 +2,7 @@ import Image from "next/image";
 import { toast } from "react-hot-toast";
 import { X } from "lucide-react";
 
+
 import IconButton from "@/components/ui/icon-button";
 import Currency from "@/components/ui/currency";
 import useCart from "@/hooks/use-cart";
@@ -29,22 +30,28 @@ const CartItem: React.FC<CartItemProps> = ({
           className="object-cover object-center"
         />
       </div>
+      {/* Display product's information */}
       <div className="relative ml-4 flex flex-1 flex-col justify-between sm:ml-6">
-        <div className="absolute z-10 right-0 top-0">
-          <IconButton onClick={onRemove} icon={<X size={15} />} />
-        </div>
+        
         <div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
           <div className="flex justify-between">
-            <p className=" text-lg font-semibold text-black">
+            <p className="text-lg font-semibold text-black">
               {data.name}
             </p>
           </div>
 
-          <div className="mt-1 flex text-sm">
+          <div className="mt-1 flex text-sm space-x-2">
+            <p className="text-bm font-semibold text-black">Color: </p>
             <p className="text-gray-500">{data.color.name}</p>
-            <p className="ml-4 border-l border-gray-200 pl-4 text-gray-500">{data.size.name}</p>
+            <p className="ml-4 border-l"></p>
+            <p className="text-bm font-semibold text-black">Size: </p>
+            <p className="border-gray-200 text-gray-500">{data.size.name}</p>
           </div>
           <Currency value={data.price} />
+        </div>
+        {/* Delelte item's cart */}
+        <div className="relative z-10 right-0 top-0">
+          <p className="text-red-300 hover:text-red-500 cursor-pointer underline" onClick={onRemove}>remove</p>
         </div>
       </div>
     </li>

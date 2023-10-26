@@ -6,10 +6,19 @@ import { useEffect, useState } from "react";
 import CartItem from "./components/cart-items";
 import Summary from "./components/summary";
 
-const CartPage = () => {
-    const cart = useCart();
-    const[isMounted, setIsMounted] = useState(false);
+import { Product } from "@/types";
 
+interface CartItemProps {
+    data: Product;
+}
+
+const CartPage: React.FC<CartItemProps> = ({
+    data
+}) => {
+    const cart = useCart();
+    
+    const[isMounted, setIsMounted] = useState(false);
+    
     useEffect(() => {
         setIsMounted(true);
     }, []);
@@ -17,6 +26,7 @@ const CartPage = () => {
     if(!isMounted) {
         return null;
     }
+
 
     return (    
         <div className="bg-white">
@@ -30,10 +40,12 @@ const CartPage = () => {
                          <ul>
                             {cart.items.map((item) => (
                                 <CartItem key={item.id} data={item} />
+                                
                             ))}
                          </ul>
                         </div> 
                         <Summary />
+                        
                     </div>
                 </div>
             </Container>
