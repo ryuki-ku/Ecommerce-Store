@@ -5,6 +5,7 @@ import { Urbanist, Roboto } from 'next/font/google'
 import Navbar from '@/components/navbar'
 import ModalProvider from '@/providers/modal-provider'
 import ToastProvider from '@/providers/toast-provider'
+import { ClerkProvider } from '@clerk/nextjs'
 
 const fontStore = Roboto({ weight: '400', subsets: ['latin'] })
 
@@ -19,6 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body 
       className={fontStore.className}>
@@ -29,5 +31,6 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
+    </ClerkProvider>
   )
 }

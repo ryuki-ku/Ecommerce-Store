@@ -6,6 +6,14 @@ import useCart from "@/hooks/use-cart";
 import { ShoppingBag } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+import {
+    ClerkProvider,
+    SignedIn,
+    SignedOut,
+    SignInButton,
+    UserButton,
+  } from "@clerk/nextjs";
+
 
 const NavbarActions = () => {
     const [isMounted, setIsMounted] = useState(false)
@@ -32,6 +40,10 @@ const NavbarActions = () => {
                     {cart.items.length}
                 </span>
             </Button>
+            <header style={{ display: "flex", justifyContent: "space-between", padding: 20 }}>
+                
+                <UserButton afterSignOutUrl="/"/>
+            </header>
         </div>
     )
 }

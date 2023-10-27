@@ -5,6 +5,7 @@ import Info from "@/components/info";
 import ProductList from "@/components/product-list";
 import Container from "@/components/ui/container";
 
+
 interface ProductPageProps {
     params: {
         productId: string;
@@ -15,9 +16,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({
     params
 }) => {
     const product = await getProduct(params.productId);
-    const suggestedProducts = await getProducts({
-        categoryId: product?.category?.id
-    })
+    const products = await getProducts({isFeatured: true});
     return (
         <div className="bg-white">
             <Container>
@@ -29,7 +28,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({
                         </div>
                     </div>
                     <hr className="my-10"/>
-                    <ProductList title="Related Items" items={suggestedProducts}/>
+                    <ProductList title="Related Items" items={products}/>
                 </div>
             </Container>
         </div>
