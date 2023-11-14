@@ -8,6 +8,7 @@ interface Query {
   colorId?: string;
   sizeId?: string;
   isFeatured?: boolean;
+  isArchived?: boolean;
 }
 
 const getProducts = async (query: Query): Promise<Product[]> => {
@@ -17,7 +18,8 @@ const getProducts = async (query: Query): Promise<Product[]> => {
       colorId: query.colorId,
       sizeId: query.sizeId,
       categoryId: query.categoryId,
-      isFeatured: query.isFeatured
+      isFeatured: query.isFeatured,
+      isArchived: query.isArchived,
     }
   })
     // Add a cache-busting parameter using a random timestamp

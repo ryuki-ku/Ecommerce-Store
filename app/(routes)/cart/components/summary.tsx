@@ -28,7 +28,7 @@ const Summary = () => {
   const totalPrice = items.reduce((total, item) => {
     return total + Number(item.price)
   }, 0);
-
+// CHECK payment using Stripe in Admin store
   const onCheckout = async () => {
     const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/checkout`, {
       productIds: items.map((item) => item.id)

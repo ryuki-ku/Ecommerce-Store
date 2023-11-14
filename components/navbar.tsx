@@ -11,15 +11,15 @@ const Navbar = async () => {
     console.log(category);
     return (
         <div className="border-b">
-            <Container>
-                <div className="relative px-4 sm:px-6 lg:px-8 flex h-16 items-center">
+            <div className="mx-auto max-w-7xl bg-slate-300"> 
+                <div className="relative px-6 sm:px-6 lg:px-8 flex h-16 items-center bg-slate-300">
                 <Link href="/" className="ml-4 flex lg:ml-0 gap-x-2">
-                    <p className="font-bold text-xl">STORE</p>
+                    <p className="font-bold text-xl">TECHSTORE</p>
                 </Link>
                 <MainNav data={category} />
                 <NavbarActions />
                 </div>
-            </Container>
+            </div>
         </div>
     )
 }

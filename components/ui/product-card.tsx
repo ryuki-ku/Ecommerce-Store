@@ -10,6 +10,8 @@ import { useRouter } from "next/navigation";
 import { MouseEventHandler } from "react";
 import usePreviewModal from "@/hooks/use-preview-modal";
 import useCart from "@/hooks/use-cart";
+// @ts-ignore  ERROR RALATE TO REACT-HOOK
+import ReactStars from 'react-stars';
 
 interface ProductCard {
     data: Product;
@@ -69,6 +71,13 @@ const ProductCard: React.FC<ProductCard> = ({
                 <p className="text-sm text-gray-500">
                     {data.category?.name}
                 </p>
+                <ReactStars 
+                    count={5} 
+                    size={24}
+                    value={data.starRating} 
+                    edit={false}
+                    color2={'#ffd700'} 
+                />
             </div>
             {/* display Price */}
             <div className="flex items-center justify-between">

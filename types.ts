@@ -15,8 +15,10 @@ export interface Product {
     category: Category;
     name: string;
     price: string;
-    inventory: number;
+    description: string;
     isFeatured: boolean;
+    isArchived: boolean;
+    starRating: string;
     size: Size;
     color: Color;
     images: Image[];

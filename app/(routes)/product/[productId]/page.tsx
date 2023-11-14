@@ -16,7 +16,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({
     params
 }) => {
     const product = await getProduct(params.productId);
-    const products = await getProducts({isFeatured: true});
+    const products = await getProducts({categoryId: product?.category?.id}); //Get products that belong to that category
     return (
         <div className="bg-white">
             <Container>

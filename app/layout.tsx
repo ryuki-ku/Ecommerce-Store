@@ -23,7 +23,7 @@ export default function RootLayout({
     <ClerkProvider>
     <html lang="en">
       <body 
-      className={fontStore.className}>
+      className={"bg-slate-200"}>
         <ModalProvider />
         <ToastProvider />
         <Navbar />
