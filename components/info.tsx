@@ -16,7 +16,6 @@ interface InfoProps {
 const Info: React.FC<InfoProps> = ({
     data
 }) => {
-    const [currentQuantity, setCurrentQuantity] = useState(1);
     const cart = useCart();
 
     const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {

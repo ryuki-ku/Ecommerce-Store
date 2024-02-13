@@ -6,7 +6,6 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Button from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-
 interface FilterProps {
     data: (Size | Color)[];
     name: string;

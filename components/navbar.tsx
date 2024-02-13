@@ -14,7 +14,7 @@ const Navbar = async () => {
             <div className="mx-auto max-w-7xl bg-slate-300"> 
                 <div className="relative px-6 sm:px-6 lg:px-8 flex h-16 items-center bg-slate-300">
                 <Link href="/" className="ml-4 flex lg:ml-0 gap-x-2">
-                    <p className="font-bold text-xl">TECHSTORE</p>
+                    <p className="font-bold text-xl">Old-things Store</p>
                 </Link>
                 <MainNav data={category} />
                 <NavbarActions />

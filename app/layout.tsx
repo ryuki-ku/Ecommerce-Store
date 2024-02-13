@@ -10,8 +10,8 @@ import { ClerkProvider } from '@clerk/nextjs'
 const fontStore = Roboto({ weight: '400', subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'HomePage Store',
-  description: 'HomePage Store',
+  title: 'Old-things Store',
+  description: 'Old-things Store',
 }
 
 export default function RootLayout({
